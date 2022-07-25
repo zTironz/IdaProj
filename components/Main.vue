@@ -97,6 +97,44 @@
             <img>
           </div>
         </div>
+        <div class="card">
+          <img class="card__image" src="./photo.png">
+          <div>
+            <h2 class="card__title">
+              Наименование товара
+            </h2>
+            <p class="card__descr">
+              Довольно-таки интересное описание товара в несколько строк.
+              Довольно-таки интересное описание товара в несколько строк
+            </p>
+            <p class="card__price">
+              10 000
+            </p>
+          </div>
+
+          <div class="card__del">
+            <img>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card__image" src="./photo.png">
+          <div>
+            <h2 class="card__title">
+              Наименование товара
+            </h2>
+            <p class="card__descr">
+              Довольно-таки интересное описание товара в несколько строк.
+              Довольно-таки интересное описание товара в несколько строк
+            </p>
+            <p class="card__price">
+              10 000
+            </p>
+          </div>
+
+          <div class="card__del">
+            <img>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -277,13 +315,14 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 32px 16px 0 32px;
-}
 
-.fist-column__header {
+&__header {
   font-weight: 600;
   font-size: 28px;
   line-height: 35px;
   color: #3f3f3f;
+}
+
 }
 
 .form {
@@ -297,76 +336,8 @@ export default {
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
     0px 6px 10px rgba(0, 0, 0, 0.02);
   border-radius: 4px;
-}
 
-.form__title {
-  position: relative;
-    height: 13px;
-    margin-bottom: 4px;
-    margin-top: 16px;
-    font-size: 10px;
-    line-height: 13px;
-    letter-spacing: -0.02em;
-    color: $color-text-form;
-}
-
-.form__title:first-child {
-  margin-top: 0;
-}
-
-.form__title::after {
- content: "";
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: $color-error;
-    border-radius: 50%;
-}
-.form__title:nth-child(3):after {
-  content: none;
-}
-
-.form__input {
-  height: 36px;
-  width: 100%;
-    background: $color-back-div;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    padding: 10px 0 11px 16px;
-}
-
-span {
-  margin-top: 4px;
-  font-size: 8px;
-  line-height: 10px;
-  letter-spacing: -0.02em;
-  color: #ff8484;
-}
-
-.form__area {
-   position: relative;
-   border: none;
-       padding: 10px 16px;
-    min-height: 108px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    outline: none;
-    font-size: 10px;
-    line-height: 13px;
-    letter-spacing: -0.02em;
-    background-color: $color-back-div;
-}
-
-::placeholder {
-  padding: 0;
-  font-size: 12px;
-  line-height: 15px;
-  color: #b4b4b4;
-}
-
-.form__button {
+&__button {
   height: 36px;
   border: none;
   margin-top: 24px;
@@ -380,9 +351,102 @@ border-radius: 10px;
   cursor: pointer;
 }
 
-.form__button_ok {
+&__button_ok {
   background-color: #7bae73;
   color: #ffffff;
+}
+
+&__title {
+  position: relative;
+    height: 13px;
+    margin-bottom: 4px;
+    margin-top: 16px;
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    color: $color-text-form;
+}
+
+&__title:first-child {
+  margin-top: 0;
+}
+
+&__title::after {
+ content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: $color-error;
+    border-radius: 50%;
+}
+&__title:nth-child(3):after {
+  content: none;
+}
+
+&__input {
+  height: 36px;
+  width: 100%;
+    background: $color-back-div;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 0 11px 16px;
+}
+
+&__area {
+   position: relative;
+   border: none;
+       padding: 10px 16px;
+    min-height: 108px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    outline: none;
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    background-color: $color-back-div;
+}
+
+&__error {
+  display: none;
+}
+
+&__input:valid:not(:placeholder-shown) {
+  border-color: #ffdb4d;
+}
+
+&__input:invalid:not(:placeholder-shown) {
+  border-color: #df4b41;
+}
+
+&__input:invalid:not(:placeholder-shown) + .form__error {
+  display: block;
+  position: absolute;
+}
+
+&__button:not(:disabled) {
+  background: #7BAE73;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+color: #fff;
+}
+
+}
+
+span {
+  margin-top: 4px;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: -0.02em;
+  color: #ff8484;
+}
+
+::placeholder {
+  padding: 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #b4b4b4;
 }
 
 .second-column {
@@ -403,13 +467,14 @@ border-radius: 10px;
   border-radius: 4px;
   margin-left: auto;
   margin-right: 32px;
-}
 
-.button-sort__text {
+&__text {
   padding: 10px 0 11px 16px;
   font-size: 12px;
   line-height: 15px;
   color: #b4b4b4;
+}
+
 }
 
 .cards {
@@ -432,20 +497,21 @@ border-radius: 10px;
     0px 6px 10px rgba(0, 0, 0, 0.02);
   border-radius: 4px;
       cursor: pointer;
-}
 
-.card__image {
+&__image {
   width: 100%;
   height: 200px;
   object-fit: contain;
   // background: url(photo.png);
 }
 
-.card__text {
+&__text {
   padding: 16px;
 }
 
-.card__title {
+&__title {
+  font-family: 'Source Sans Pro';
+font-style: normal;
   margin-top: 16px;
   margin-left: 16px;
   margin-right: 16px;
@@ -456,7 +522,7 @@ border-radius: 10px;
     color: #3f3f3f;
 }
 
-.card__descr {
+&__descr {
 font-family: 'Source Sans Pro';
 font-style: normal;
 font-weight: 400;
@@ -469,7 +535,9 @@ font-weight: 400;
     height: 85px;
 }
 
-.card__price {
+&__price {
+  font-family: 'Source Sans Pro';
+font-style: normal;
   font-weight: 600;
     font-size: 24px;
     line-height: 30px;
@@ -479,11 +547,11 @@ font-weight: 400;
   margin-right: 16px;
 }
 
-.card__price::after {
+&__price::after {
   content: ' руб.';
 }
 
-.card__del {
+&__del {
   display: none;
   position: absolute;
   right: -8px;
@@ -499,32 +567,10 @@ font-weight: 400;
     background-position: center;
 }
 
-.card:hover .card__del{
+&:hover .card__del{
   display: block;
 }
 
-.form__error {
-  display: none;
-}
-
-.form__input:valid:not(:placeholder-shown) {
-  border-color: #ffdb4d;
-}
-
-.form__input:invalid:not(:placeholder-shown) {
-  border-color: #df4b41;
-}
-
-.form__input:invalid:not(:placeholder-shown) + .form__error {
-  display: block;
-  position: absolute;
-}
-
-.form__button:not(:disabled) {
-  background: #7BAE73;
-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-border-radius: 10px;
-color: #fff;
 }
 
 @media screen and (max-width:1024px) {
