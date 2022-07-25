@@ -3,7 +3,7 @@ export default {
   ssr: false,
   target: 'static',
   router: {
-    base: '/'
+    base: '/IdaProj/'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
