@@ -15,5 +15,12 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/no-parsing-error': [
+      'error',
+      {
+        'invalid-first-character-of-tag-name': false
+      }
+    ]
+  }
 }
